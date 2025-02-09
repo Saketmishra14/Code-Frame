@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeFramer: Transform your code into visuals</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Link to Google Fonts for Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body style="background: linear-gradient(#0f0e0e , #1f1f1f);">
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <!-- logo with highlighted text -->
+      <div class="logo">
+        <img src="assets/logo.png" alt="Code-Frame Logo">
+        <a href="index.html"><span>Code-</span><span class="highlight">Frame</span></a>
+      </div>
+      <!-- Navigation buttons -->
+      <div class="nav-buttons">
+        <a href="#" class="nav-button">Contributors</a>
+        <a href="#" class="nav-button">About</a>
+        <a href="#" class="nav-button">GitHub Repo</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- code to image page converter section -->
+  
+<section class="code-converter">
+    <!-- Gradient Heading -->
+    <h1 class="gradient-heading">CONVERT YOUR CODES TO IMAGES</h1>
+  
+    <!-- Dropdown for Programming Languages -->
+    <select class="language-dropdown">
+      <option value="cpp">C++</option>
+        <option value="javascript">Javascript</option>
+        <option value="java">Java</option>  
+        <option value="c">C</option>
+        <option value="csharp">C#</option>
+        <option value="python">Python</option>
+        <option value="ruby">Ruby</option>
+        <option value="perl">Perl</option>
+        <option value="php">PHP</option>
+        <option value="go">Go</option>
+        <option value="r">R</option>
+        <option value="git">Git</option>
+        <option value="sql">SQL</option>
+        <option value="yaml">YAML</option>
+        <option value="docker">Docker</option>
+        <option value="css">CSS</option>
+        
+    </select>
+  
+    <!-- Code Input Box -->
+    <textarea class="code-input">
+#include <iostream> 
+using namespace std; 
+
+      int main() {
+          cout << "Hello World";  
+          return 0;  
+      }</textarea>
+  
+    <!-- Generate Button -->
+    <button class="generate-button">Generate</button>
+  
+    <!-- Preview Area -->
+    <div class="preview-area">
+      <!-- macOS-style Buttons -->
+      <div class="mac-buttons">
+        <span class="mac-btn red"></span>
+        <span class="mac-btn yellow"></span>
+        <span class="mac-btn green"></span>
+      </div>
+      <!-- Preview Content -->
+      <pre class="preview-content"><code>// Your generated image preview will appear here</code></pre>
+    </div>
+  </section>
+</body>
+</html>
