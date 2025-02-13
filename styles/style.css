@@ -19,9 +19,16 @@
     left: 0;
     right: 0;
   }
+  .logo-image{
+    width: 40px;  
+    height: 40px; 
+    border-radius: 50%; 
+    object-fit: cover;
+  }
   
   /* Logo Styling */
   .logo {
+   
     display: flex;
     align-items: center;
     gap: 10px; /* Spacing between logo image and text */
@@ -260,3 +267,50 @@
       padding: 10px 20px;
     }
   }
+
+  .footer {
+    background-color: #121212; /* Dark background */
+    color: #fff; /* White text */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.footer-logo{
+  width: 60px;  
+    height: 60px; 
+    border-radius: 50%; 
+    object-fit: cover;
+
+}
+
+.footer-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.footer-left p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.footer-right img {
+    width: 60px; /* Adjust the logo size */
+}
+.footer-left p{
+  font-size: 22px;
+  width: 500px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
