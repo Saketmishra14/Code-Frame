@@ -277,6 +277,7 @@
     align-items: center;
     text-align: center;
     font-family: Arial, sans-serif;
+    height: 400px;
 }
 .footer-logo{
   width: 60px;  
@@ -294,13 +295,18 @@
 }
 
 .footer-left h2 {
-    font-size: 24px;
-    font-weight: bold;
+  position: relative;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-align: start;
+    
 }
 
 .footer-left p {
     font-size: 14px;
     opacity: 0.7;
+    text-align: start;
 }
 
 .footer-right img {
@@ -313,4 +319,5 @@
   overflow-wrap: break-word;
   word-break: break-word;
   white-space: normal;
+ 
 }
