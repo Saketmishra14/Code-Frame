@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeFramer: Transform your code into visuals</title>
-  <!--<link rel="stylesheet" href="styles.css">-->
   <!-- Link to Google Fonts for Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css">
@@ -70,10 +69,11 @@
   
   
     <!-- Generate Button -->
-    <button class="generate-button">Generate</button>
+    <button class="generate-button" id="generateBtn">Generate</button>
+
   
     <!-- Preview Area -->
-    <div class="preview-area">
+    <div class="preview-area" id="codePreview">
       <!-- macOS-style Buttons -->
       <div class="mac-buttons">
         <span class="mac-btn red"></span>
@@ -82,17 +82,11 @@
       </div>
       <!-- Preview Content -->
        <div class="preview-contents">
-      <pre class="preview-content">
-        <code>
-          #include <iostream>
-            using namespace std; 
-       
-             int main() {
-                 cout << "Hello World";  
-                 return 0;  
-             }
-
-        </code>
+      
+        <pre class="preview-content">
+          <code id="codeOutput">
+            <!-- JavaScript  content yahan inject karega -->
+          </code>
         </pre>
       </div>
         
@@ -108,7 +102,7 @@
 
       <input type="range" min="3" max="50" value = "21" id="code-to-image-page-tools-section-range-Field" step="1"></input>
 
-      <div class="code-to-image-page-tools-section-background-selection">
+      <!-- <div class="code-to-image-page-tools-section-background-selection">
         <div class="code-to-image-page-tools-section-background-selection-initial" id="code-to-image-page-tools-section-background-selection-initial-id" onclick="backgroundColorMenuOnOFF()"></div>
         <div class="code-to-image-page-tools-section-background-selection-all-background" id="code-to-image-page-tools-section-background-selection-all-background-id"  style="display: grid;">
             <div class="code-to-image-page-tools-section-background-selection-all-background-col" id="code-to-image-page-tools-section-background-selection-all-background-col1-id" onclick="backgroundColorChange(this.id)" style="background-image: linear-gradient(to bottom, rgb(4, 121, 231), rgb(5, 196, 213));"></div>
@@ -130,8 +124,8 @@
             <div class="code-to-image-page-tools-section-background-selection-all-background-col" id="code-to-image-page-tools-section-background-selection-all-background-col16-id" onclick="backgroundColorChange(this.id)" style="background-image: linear-gradient(to bottom, #ede8ec, #f8e4f3);"></div>
         </div>
     </div>
-</div>
-<a href="" class="code-to-image-page-button" id="code-to-image-page-download-button-id" onclick="downloadImage()">Download</a>
+</div> -->
+<a href="#" class="code-to-image-page-button" id="code-to-image-page-download-button-id">Download</a>
     </div>
 </div>
 
@@ -145,49 +139,39 @@
     </div>
     <script src="./script/html2canvas.js"></script>
     <script src="./script/prism.js" type="text/javascript"></script>
-    
-    <script >
-      // resets the session storage after the index page reloads
-      window.addEventListener("load", function(){
-    sessionStorage.clear();
+    <script>
+      // Elements ko get karo
+       const generateBtn = document.getElementById("generateBtn");
+       const codeInput = document.getElementById("code-to-image-page-textarea-id");
+       const codeOutput = document.getElementById("codeOutput");
+
+        // Button par click hone par code preview me show karo
+        generateBtn.addEventListener("click", () => {
+        const code = codeInput.value;           // User se code lo
+        codeOutput.textContent = code;          // Output me dikhayo (HTML escape safe)
+  });
+
+  // Download image in PNG format
+const downloadBtn = document.getElementById("code-to-image-page-download-button-id");
+const codePreview = document.getElementById("codePreview");
+
+downloadBtn.addEventListener("click", function (e) {
+  e.preventDefault(); // prevent default behavior of anchor tag
+
+  html2canvas(codePreview).then((canvas) => {
+    const image = canvas.toDataURL("image/png");
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = "code-image.png";
+    link.click();
+  });
 });
 
-// This is for the drop-down menu of background color of code to image converter
-       function backgroundColorMenuOnOFF() {
-        var elementstylecolor = document.getElementById("code-to-image-page-tools-section-background-selection-all-background-id").style;
-          if (elementstylecolor.display == "none" || elementstylecolor.display == "") {
-        elementstylecolor.display = "grid";
-          } else {
-        elementstylecolor.display = "none";
-    }
-}
-      function backgroundColorChange(id)
-                {
-                    var backgroundColor = document.getElementById(id).style.backgroundImage;
 
-                    sessionStorage.setItem("background", backgroundColor);
-                    document.getElementById("code-to-image-page-main-container-id").style.backgroundImage = backgroundColor;
-                    document.getElementById("code-to-image-page-hidden-main-container-id").style.backgroundImage = backgroundColor;
-                    document.getElementById("code-to-image-page-tools-section-background-selection-initial-id").style.backgroundImage = backgroundColor;
-
-                }
-
-    // Capture the div as an image
-   // function downloadImage(){
-    const element=document.querySelector(".preview-contents")
-    html2canvas(element,{ width: div.offsetWidth,   // Fix width
-                height: div.offsetHeight, // Fix height
-                scale: 1}).then(function(canvas) {
-    document.querySelector(".preview-contents").append(canvas);
-    let imagecode=document.querySelector("canvas");
-    let downloadbutton=document.querySelector(".code-to-image-page-button")
-    downloadbutton.href=imagecode.toDataURL()
-    downloadbutton.download="filename.png";
-
-});
 
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
   </section>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000000" fill-opacity="1" d="M0,96L34.3,128C68.6,160,137,224,206,213.3C274.3,203,343,117,411,117.3C480,117,549,203,617,218.7C685.7,235,754,181,823,181.3C891.4,181,960,235,1029,261.3C1097.1,288,1166,288,1234,266.7C1302.9,245,1371,203,1406,181.3L1440,160L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
