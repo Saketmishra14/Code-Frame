@@ -34,25 +34,25 @@
     <h1 class="gradient-heading">CONVERT YOUR CODES TO IMAGES</h1>
   
     <!-- Dropdown for Programming Languages -->
-    <select class="language-dropdown">
-      <option value="cpp">C++</option>
-        <option value="javascript">Javascript</option>
-        <option value="java">Java</option>  
-        <option value="c">C</option>
-        <option value="csharp">C#</option>
-        <option value="python">Python</option>
-        <option value="ruby">Ruby</option>
-        <option value="perl">Perl</option>
-        <option value="php">PHP</option>
-        <option value="go">Go</option>
-        <option value="r">R</option>
-        <option value="git">Git</option>
-        <option value="sql">SQL</option>
-        <option value="yaml">YAML</option>
-        <option value="docker">Docker</option>
-        <option value="css">CSS</option>
-        
-    </select>
+    <select class="code-to-image-language-selector language-dropdown" id="language-selector" onchange="selectLang()">
+      <option value="language-cpp">C++</option>
+      <option value="language-javascript">Javascript</option>
+      <option value="language-java">Java</option>
+      
+      <option value="language-c">C</option>
+      <option value="language-csharp">C#</option>
+      <option value="language-python">Python</option>
+      <option value="language-ruby">Ruby</option>
+      <option value="language-perl">Perl</option>
+      <option value="language-php">PHP</option>
+      <option value="language-go">Go</option>
+      <option value="language-r">R</option>
+      <option value="language-git">Git</option>
+      <option value="language-sql">SQL</option>
+      <option value="language-yaml">YAML</option>
+      <option value="language-docker">Docker</option>
+      <option value="language-css">CSS</option>
+  </select>
   
     <!-- Code Input Box -->
 <div class="code-to-image-page-container">
@@ -166,6 +166,14 @@ downloadBtn.addEventListener("click", function (e) {
     link.click();
   });
 });
+
+
+function selectLang() {
+    const lang = document.getElementById("language-selector").value;
+    const codeElement = document.querySelector("codeOutput");
+    codeElement.className = lang; // Apply selected language
+    Prism.highlightAll(); // Re-highlight the code
+}
 
 
 
