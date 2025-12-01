@@ -1,17 +1,20 @@
 <body style="background: linear-gradient(#0f0e0e , #1f1f1f);">
   <!-- Navbar -->
   <header>
-    <nav class="navbar">
-      <!-- logo with highlighted text -->
-      <div class="logo">
-        <img src="..\assets/logo.png" alt="Code-Frame Logo" class="logo-image">
-        <a href="..\index.html"><span>Code-</span><span class="highlight">Frame</span></a>
-      </div>
-      <!-- Navigation buttons -->
-      <div class="nav-buttons">
-        <a href="contributors.html" class="nav-button">Contributors</a>
-        <a href="about.html" class="nav-button">About</a>
-        <a href="https://github.com/Saketmishra14/Code-Frame" class="nav-button">GitHub Repo 🍴</a>
-      </div>
-    </nav>
-  </header>
+        <div class="container" onclick="menuFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
+        <div class="headerLogoNameContainer">
+            <img class="headerLogo" src="../assets/logo.png">
+            <a href="/" class="headerName">Code-Frame</a>
+        </div>
+
+        <ul class="headerNavigation" id="headerNavigationId">
+            <li><a href="contributors.html">Contributors</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="https://github.com/Saketmishra14/Code-Frame" target="_blank">GitHub Repo 🍴</a></li>
+        </ul>
+    </header>

@@ -1,57 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CodeFramer: About</title>
-  <!-- Link to Google Fonts for Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="..\styles/style.css">
-
-   <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Code-Frame: About</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 <body style="background: linear-gradient(#0f0e0e , #1f1f1f);">
 
-  <!-- Navbar -->
+    <div class="page-loader-animation-section" id="page-loader-animation-section-id">
+        <img src="../assests/logo.png">
+    </div>
+   
+    <!-- Navbar -->
   <div id="navbar_call">
 
   </div>
+   
 
-   <!-- About Section -->
-   <section class="about">
-    <h1>About</h1>
-    <div class="profile">
-        <img src="..\assets/profile.png" alt="Profile Picture">
+    <div class="about-page-header">
+        About
     </div>
-    <p>Hello, I'm Saket Mishra, a 19-year-old currently pursuing my second year of a computer science degree. This platform is all about coding, where you can transform your code into images. Additionally, I write programming blogs on @hashnode. In the future, I plan to introduce more features to this site. Keep exploring and reading our blogs to enhance your coding journey.
-        </p>
-    <h2>Contact</h2>
-    <div class="social-icons">
-        <a href="https://github.com/Saketmishra14"><img src="..\assets/github.png" alt="GitHub"></a>
-        <a href="https://www.instagram.com/mishrasaket_14/"><img src="..\assets/instagram.png" alt="Instagram"></a>
-        <a href="https://www.linkedin.com/in/saket-mishra-5075aa2a6/"><img src="..\assets/linkedin.png" alt="LinkedIn"></a>
-    </div>
-</section>
-  
 
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000000" fill-opacity="1" d="M0,96L34.3,128C68.6,160,137,224,206,213.3C274.3,203,343,117,411,117.3C480,117,549,203,617,218.7C685.7,235,754,181,823,181.3C891.4,181,960,235,1029,261.3C1097.1,288,1166,288,1234,266.7C1302.9,245,1371,203,1406,181.3L1440,160L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
+    <div class="about-page-container">
+        <div class="about-page-container-profile-img">
+            <img src="../assets/profile.png">
+        </div>
 
-  <!--footer -->
+        <div class="about-page-container-profile-description">
+           Hi, my name is Yash, and I'm currently in the second year of my bachelor's degree in computer science. I am 20 years old.
+          This website is all about coding — you can convert your code into images quickly and easily. I also write blogs on Hashnode about programming and tech.
+         More features will be added soon, so keep visiting the website and check out our blogs to support your coding journey and continue learning.
+        </div>
 
-  <div id="footer_call">
+
+    <script src="../script/scriptJS.js"></script>
+
+    
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        window.addEventListener("load", function(){
+        
+            document.getElementById("about-page-container-journey-container-id").style.display="block";
+
+        });
+        
+    </script>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000000" fill-opacity="1" d="M0,224L17.1,229.3C34.3,235,69,245,103,229.3C137.1,213,171,171,206,144C240,117,274,107,309,90.7C342.9,75,377,53,411,53.3C445.7,53,480,75,514,90.7C548.6,107,583,117,617,128C651.4,139,686,149,720,138.7C754.3,128,789,96,823,101.3C857.1,107,891,149,926,186.7C960,224,994,256,1029,250.7C1062.9,245,1097,203,1131,160C1165.7,117,1200,75,1234,80C1268.6,85,1303,139,1337,165.3C1371.4,192,1406,192,1423,192L1440,192L1440,320L1422.9,320C1405.7,320,1371,320,1337,320C1302.9,320,1269,320,1234,320C1200,320,1166,320,1131,320C1097.1,320,1063,320,1029,320C994.3,320,960,320,926,320C891.4,320,857,320,823,320C788.6,320,754,320,720,320C685.7,320,651,320,617,320C582.9,320,549,320,514,320C480,320,446,320,411,320C377.1,320,343,320,309,320C274.3,320,240,320,206,320C171.4,320,137,320,103,320C68.6,320,34,320,17,320L0,320Z"></path></svg>
+
+    <div id="footer_call">
 
 
   </div>
+
   <script src="./script/html2canvas.js"></script>
   <script src="./script/prism.js" type="text/javascript"></script>
   
+
   <script>
     $( "#navbar_call" ).load( "header.html" );
      $("#footer_call").load("footer.html")
      </script>
-
-  
+    
 </body>
 </html>
